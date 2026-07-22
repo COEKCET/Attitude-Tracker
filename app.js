@@ -1,4 +1,4 @@
-const API = "https://script.google.com/macros/s/AKfycbxQKChd9PDzZBlXuG4xwUJcAj81IH8gX-QJP6T951QoTiXWWmDneoWtNjksiwfB8hg_bQ/exec";
+const API = "https://script.google.com/macros/s/AKfycbxBn6GYZBdOekcj-q4NPewW99T0RUM_Z7z4gbLEdM5GS3tzLFxKG_NOviEUJKNJip8TPQ/exec";
 let currentStudent = {};
 
 function login() {
@@ -83,7 +83,7 @@ function loadAttitude(){
  fetch(API,{method:"POST",body:JSON.stringify({action:"getAttitude"})})
  .then(r=>r.json()).then(d=>{
   attitude.innerHTML="";
-  (type.value=="Disobey"?d.Disobey:d.good).forEach(a=>{
+  (type.value=="Disobey"?d.mis:d.good).forEach(a=>{
    attitude.innerHTML+=`<option value="${a.marks}">${a.name}</option>`;
   });
  });
