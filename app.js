@@ -1,4 +1,4 @@
-const API = "https://script.google.com/macros/s/AKfycbxBn6GYZBdOekcj-q4NPewW99T0RUM_Z7z4gbLEdM5GS3tzLFxKG_NOviEUJKNJip8TPQ/exec";
+const API = "https://script.google.com/macros/s/AKfycbyBJPihT5UDkS06m7W-kSQqAXCF21ZW_ACcq3hKAZP_Lt1Hc6zbF8NkTRsoyzboaUfm/exec";
 let currentStudent = {};
 
 function login() {
