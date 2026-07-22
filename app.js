@@ -83,7 +83,7 @@ function loadAttitude(){
  fetch(API,{method:"POST",body:JSON.stringify({action:"getAttitude"})})
  .then(r=>r.json()).then(d=>{
   attitude.innerHTML="";
-  (type.value=="MIS"?d.mis:d.good).forEach(a=>{
+  (type.value=="Disobey"?d.Disobey:d.good).forEach(a=>{
    attitude.innerHTML+=`<option value="${a.marks}">${a.name}</option>`;
   });
  });
@@ -212,7 +212,7 @@ function loadReport(){
        <th>S.No</th>
        <th>Roll No</th>
        <th>Name</th>
-       <th>MIS</th>
+       <th>Disobey</th>
        <th>GOOD</th>
        <th>Final</th>
      </tr>
@@ -237,7 +237,7 @@ function downloadCSV(){
    return;
  }
 
- let csv = "S.No,Roll No,Name,MIS,GOOD,Final\n";
+ let csv = "S.No,Roll No,Name,Disobey,GOOD,Final\n";
 
  reportData.forEach((r,i)=>{
    csv += `${i+1},${r[0]},${r[1]},${r[5]},${r[6]},${r[7]}\n`;
@@ -324,7 +324,7 @@ doc.autoTable({
     "S.No",
     "Roll No",
     "Student Name",
-    "MIS",
+    "Disobey",
     "GOOD",
     "Final"
   ]],
@@ -509,7 +509,7 @@ async function downloadStudentPDF() {
 
   doc.autoTable({
     startY: y + 10,
-    head: [["MIS Total", "GOOD Total", "Available Points"]],
+    head: [["Disobey Total", "GOOD Total", "Available Points"]],
     body: [[
       data.score[5],
       data.score[6],
