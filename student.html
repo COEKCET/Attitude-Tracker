@@ -725,7 +725,7 @@ fetch(API,{
     scoreBox.innerHTML = `
       <div class="score-grid">
         <div class="score-card danger">
-          <div class="score-label">Misbehavior Points</div>
+          <div class="score-label">Disobey Points</div>
           <div class="score-value">${d.score[5]}</div>
           <div class="score-desc">Total negative marks</div>
         </div>
@@ -778,7 +778,7 @@ fetch(API,{
             ${d.history.map(r=>`
               <tr>
                 <td>${new Date(r[0]).toLocaleDateString()}</td>
-                <td><span class="badge ${r[7]==='MIS'?'badge-mis':'badge-good'}">${r[7]==='MIS'?'MIS':'GOOD'}</span></td>
+                <td><span class="badge ${r[7]==='Disobey'?'badge-mis':'badge-good'}">${r[7]==='Disobey'?'Disobey':'GOOD'}</span></td>
                 <td>${r[8]}</td>
                 <td><b>${r[9]}</b></td>
               </tr>
